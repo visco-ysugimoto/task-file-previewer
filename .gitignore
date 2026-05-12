@@ -1,0 +1,23 @@
+# PyInstaller
+/build/
+/dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+*.egg-info/
+.eggs/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local / cache
+.pytest_cache/
+*.log
