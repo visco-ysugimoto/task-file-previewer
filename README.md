@@ -5,13 +5,17 @@
 ## 主要ファイル
 
 - `task_file_previewer.py`: アプリ本体
-- `app_version.txt`: 配布版数
+- `app_version.txt`: 配布版数（exe のバージョンリソース・ZIP 名に使用）
+- `app.manifest`: Windows マニフェスト（DPI / Common Controls 6）
+- `build_file_version_info.py`: PyInstaller 用 `file_version_info.txt` の生成
 - `build_task_file_previewer.ps1`: ビルドスクリプト
 - `register_task_file_previewer_context_menu.ps1`: 右クリック連携の登録
 - `unregister_task_file_previewer_context_menu.ps1`: 右クリック連携の解除
 - `task_file_previewer_flowchart.md`: フローチャート
 
-## ビルド
+## ビルド（Windows アプリケーション / exe）
+
+`build_task_file_previewer.ps1` で PyInstaller を実行し、**ウィンドウアプリ（コンソールなし）**の `TaskFilePreviewer.exe` を生成します。exe のプロパティ（製品名・ファイルバージョンなど）は `app_version.txt` と同期するよう、`file_version_info.txt` をビルド直前に自動生成します。DPI は `app.manifest` で PerMonitorV2 を指定しています。
 
 ```powershell
 .\build_task_file_previewer.ps1

@@ -41,6 +41,14 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host ""
+Write-Host "Generating Windows version resource..." -ForegroundColor Yellow
+python .\build_file_version_info.py
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Failed to generate file_version_info.txt." -ForegroundColor Red
+    exit 1
+}
+
+Write-Host ""
 Write-Host "Cleaning previous build artifacts..." -ForegroundColor Yellow
 if (Test-Path ".\build\TaskFilePreviewer") { Remove-Item -Recurse -Force ".\build\TaskFilePreviewer" }
 if (Test-Path ".\dist\TaskFilePreviewer.exe") { Remove-Item -Force ".\dist\TaskFilePreviewer.exe" }
@@ -67,6 +75,8 @@ if ($BuildMode -eq "OneDir") {
     $distDir = (Resolve-Path ".\dist\TaskFilePreviewer").Path
     $helperFiles = @(
         ".\icon_image.ico",
+        ".\app_version.txt",
+        ".\app.manifest",
         ".\README.md",
         ".\distribution_guide.md",
         ".\register_task_file_previewer_context_menu.bat",

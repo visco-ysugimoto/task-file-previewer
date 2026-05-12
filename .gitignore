@@ -21,3 +21,6 @@ Thumbs.db
 # Local / cache
 .pytest_cache/
 *.log
+
+# Generated at build time (PyInstaller Windows version resource)
+file_version_info.txt

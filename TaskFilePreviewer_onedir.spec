@@ -20,6 +20,14 @@ exe_icon = str(icon_path) if icon_path.exists() else None
 if icon_path.exists():
     datas.append((str(icon_path), "."))
 
+_version_path = Path("file_version_info.txt")
+_manifest_path = Path("app.manifest")
+_exe_opts = {}
+if _version_path.exists():
+    _exe_opts["version"] = str(_version_path)
+if _manifest_path.exists():
+    _exe_opts["manifest"] = str(_manifest_path)
+
 a = Analysis(
     ["task_file_previewer.py"],
     pathex=[],
@@ -53,6 +61,7 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     icon=exe_icon,
+    **_exe_opts,
 )
 
 coll = COLLECT(
