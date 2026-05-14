@@ -64,7 +64,7 @@ if (-not (Test-Path $exePath)) {
     throw "App path does not exist: $exePath"
 }
 
-$extensions = @(".ziq", ".zit", ".zii")
+$extensions = @(".ziq", ".zit", ".zii", ".zig", ".zia")
 if ($IncludeZip) {
     $extensions += ".zip"
 }

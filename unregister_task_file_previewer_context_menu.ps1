@@ -13,7 +13,7 @@ function Remove-ExtensionMenu {
     reg.exe delete $baseKey /f | Out-Null
 }
 
-$extensions = @(".ziq", ".zit", ".zii")
+$extensions = @(".ziq", ".zit", ".zii", ".zig", ".zia")
 if ($IncludeZip) {
     $extensions += ".zip"
 }

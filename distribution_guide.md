@@ -46,9 +46,9 @@
 展開先フォルダで、次のいずれかをダブルクリックします。
 
 - `register_task_file_previewer_context_menu.bat`
-  - 対象: `.ziq` / `.zit` / `.zii`
+  - 対象: `.ziq` / `.zit` / `.zii` / `.zig` / `.zia`
 - `register_task_file_previewer_context_menu_include_zip.bat`
-  - 対象: `.ziq` / `.zit` / `.zii` / `.zip`
+  - 対象: `.ziq` / `.zit` / `.zii` / `.zig` / `.zia` / `.zip`
 
 処理完了後に黒い画面が表示されたままになるので、結果を確認してキーを押して閉じてください。
 `bat` は同じフォルダにある `TaskFilePreviewer.exe` を自動で参照します。
@@ -74,9 +74,9 @@ powershell -ExecutionPolicy Bypass -File .\register_task_file_previewer_context_
 展開先フォルダで、次のいずれかをダブルクリックします。
 
 - `unregister_task_file_previewer_context_menu.bat`
-  - 対象: `.ziq` / `.zit` / `.zii`
+  - 対象: `.ziq` / `.zit` / `.zii` / `.zig` / `.zia`
 - `unregister_task_file_previewer_context_menu_include_zip.bat`
-  - 対象: `.ziq` / `.zit` / `.zii` / `.zip`
+  - 対象: `.ziq` / `.zit` / `.zii` / `.zig` / `.zia` / `.zip`
 
 ### 方法2: PowerShell から実行
 
@@ -102,7 +102,7 @@ powershell -ExecutionPolicy Bypass -File .\unregister_task_file_previewer_contex
 
 - 右クリックメニューが出ない:
   - 登録後にエクスプローラーを開き直してください。
-  - 対象拡張子が `.ziq` / `.zit` / `.zii` か確認してください。
+  - 対象拡張子が `.ziq` / `.zit` / `.zii` / `.zig` / `.zia` か確認してください。
 - 起動しない:
   - `TaskFilePreviewer.exe` と `_internal` フォルダが同じフォルダにあるか確認してください。
 - 展開先を移動した:

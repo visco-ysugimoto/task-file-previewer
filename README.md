@@ -4,7 +4,11 @@
 
 ## 主要ファイル
 
-- `task_file_previewer.py`: アプリ本体
+- `task_file_previewer.py`: Tk GUI・非同期読み込み（エントリ。ここから他モジュールを import）
+- `models.py`: データクラス（`PreviewItem` / `TaskZipMetadata`）
+- `task_info_parser.py`: `info.txt` の v1/v2 パース
+- `task_zip_reader.py`: ZIP から BMP 参照順・ver/info メタデータ取得（Tk 非依存）
+- `resources.py`: アイコン・Windows AppUserModelID・リソースパス
 - `app_version.txt`: 配布版数（exe のバージョンリソース・ZIP 名に使用）
 - `app.manifest`: Windows マニフェスト（DPI / Common Controls 6）
 - `build_file_version_info.py`: PyInstaller 用 `file_version_info.txt` の生成
